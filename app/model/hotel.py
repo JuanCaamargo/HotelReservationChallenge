@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, date, timedelta
 from typing import ClassVar
 
+
 from app.services.util import (generate_unique_id, date_lower_than_today_error,
     reservation_not_found_error, guest_not_found_error, room_not_available_error,
     room_not_found_error, room_already_exists_error)
@@ -54,4 +55,18 @@ class Reservation:
 # TODO: Implement Room class here
 
 
+
 # TODO: Implement Hotel class here
+class Hotel:
+
+
+    def __init__(self):
+        self.rooms: dict[int, Room] = {}
+        self.reservations: dict[str, Reservation] = {}
+
+    def add_room(self, number: int, type_: str, price_per_night: float):
+        if number in self.rooms:
+            room_already_exists_error()
+
+
+
