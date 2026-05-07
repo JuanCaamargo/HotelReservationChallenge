@@ -114,16 +114,3 @@ def update_booking(self, reservation_id: str, check_in: date, check_out: date):
 
 
 # TODO: Implement Hotel class here
-class Hotel:
-
-
-    def __init__(self):
-        self.rooms: dict[int, Room] = {}
-        self.reservations: dict[str, Reservation] = {}
-
-    def add_room(self, number: int, type_: str, price_per_night: float):
-        if number in self.rooms:
-            room_already_exists_error()
-
-
-
